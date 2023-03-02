@@ -13,6 +13,8 @@ class MyApp extends StatelessWidget {
       title: 'Movies App',
       initialRoute: 'home',
       routes: {'home': (_) => HomeScreen(), 'details': (_) => DetailScreen()},
+      theme: ThemeData.light()
+          .copyWith(appBarTheme: AppBarTheme(color: Colors.lightBlueAccent)),
     );
   }
 }
