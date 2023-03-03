@@ -8,19 +8,22 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          backgroundColor: Color.fromARGB(255, 11, 227, 227),
           title: Text('Movies in theaters'),
           actions: [
             IconButton(onPressed: () {}, icon: Icon(Icons.search_rounded))
           ],
         ),
-        body: Column(
-          children: [
-            // TODO: CardSwiper
+        body: SingleChildScrollView(
+            child: Column(
+          children: const [
+            // * CardSwiper
 
-            CardSwiper()
+            CardSwiper(),
 
-            // Listado Horizontal de Peliculas
+            //* Listado Horizontal de Peliculas
+            MovieSlieder()
           ],
-        ));
+        )));
   }
 }

@@ -11,7 +11,7 @@ class CardSwiper extends StatelessWidget {
     return Container(
       width: double.infinity,
       height: size.height * 0.5,
-      color: Colors.lightBlueAccent[100],
+      color: Colors.white,
       child: Swiper(
         itemCount: 10,
         layout: SwiperLayout.TINDER,
@@ -23,7 +23,7 @@ class CardSwiper extends StatelessWidget {
                 arguments: 'movie-instance'),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(20),
-              child: FadeInImage(
+              child: const FadeInImage(
                 placeholder: AssetImage('assets/no-image.jpg'),
                 image: NetworkImage('https://via.placeholder.com/300x400'),
                 fit: BoxFit.cover,
