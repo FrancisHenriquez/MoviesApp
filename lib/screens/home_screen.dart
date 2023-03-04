@@ -22,7 +22,7 @@ class HomeScreen extends StatelessWidget {
             CardSwiper(),
 
             //* Listado Horizontal de Peliculas
-            MovieSlieder()
+            MovieSlieder(),
           ],
         )));
   }
