@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:movies/widgets/casting_cards.dart';
 
 class DetailsScreen extends StatelessWidget {
   @override
@@ -13,7 +14,14 @@ class DetailsScreen extends StatelessWidget {
         body: CustomScrollView(
       slivers: [
         _CustomAppBar(),
-        SliverList(delegate: SliverChildListDelegate([_PosterAndTitle()]))
+        SliverList(
+            delegate: SliverChildListDelegate([
+          _PosterAndTitle(),
+          // _Overview(),
+          _Overview(),
+          // _Overview(),
+          CastingCards()
+        ])),
       ],
     ));
   }
@@ -38,7 +46,7 @@ class _CustomAppBar extends StatelessWidget {
         ),
         background: FadeInImage(
           placeholder: AssetImage('assets/loading.gif'),
-          image: AssetImage('assets/prueba.jpg'),
+          image: NetworkImage('https://via.placeholder.com/300x400'),
           fit: BoxFit.cover,
         ),
       ),
@@ -89,7 +97,6 @@ class _PosterAndTitle extends StatelessWidget {
                   SizedBox(
                     width: 5,
                   ),
-                  // ignore: deprecated_member_use
                   Text('movie.voteAverage', style: textTheme.caption)
                 ],
               )
@@ -97,6 +104,18 @@ class _PosterAndTitle extends StatelessWidget {
           )
         ],
       ),
+    );
+  }
+}
+
+class _Overview extends StatelessWidget {
+  const _Overview({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Text(
+          '`Would it be of any use, now, thought poor Alice, and her eyes filled with tears again as she went down to the end of his Normans--" How are you getting on now, my dear? it continued, turning to Alice as it didn t sound at all the right word) `--but I shall only look up and went to the table to measure herself by it, and finding it very nice, (it had, in fact, a sort of circle, (`the exact shape doesnt matter, it said,) and then all the party were placed along the course, here and there. `That WAS a narrow escape! said Alice, a good deal frightened at the sudden change, but very glad to find herself still in existence; `and now for the hot day made her feel very sleepy and stupid), whether the pleasure of making a daisy-chain would be offended again. She felt that she had somehow fallen into it: there were a Duck and a Dodo, a Lory and an Eaglet, and several other curious creatures. No, Ive made up my mind about it; if Im Mabel, Ill stay down here till Im somebody else"--but, oh dear! cried Alice, with a sudden burst of tears, `I do wish they WOULD not remember ever having seen such a thing.'),
     );
   }
 }
