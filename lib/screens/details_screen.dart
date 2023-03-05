@@ -30,21 +30,25 @@ class DetailsScreen extends StatelessWidget {
 class _CustomAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return const SliverAppBar(
+    return SliverAppBar(
       backgroundColor: Color.fromARGB(255, 11, 227, 227),
       expandedHeight: 200,
       floating: false,
       pinned: true,
       flexibleSpace: FlexibleSpaceBar(
         centerTitle: true,
-        title: SizedBox(
+        title: Container(
           width: double.infinity,
-          child: Text(
-            'Movie.title',
+          alignment: Alignment.bottomCenter,
+          padding: const EdgeInsets.only(bottom: 10, left: 10, right: 10),
+          color: Colors.black12,
+          child: const Text(
+            'movie.title',
             style: TextStyle(fontSize: 16),
+            textAlign: TextAlign.center,
           ),
         ),
-        background: FadeInImage(
+        background: const FadeInImage(
           placeholder: AssetImage('assets/loading.gif'),
           image: NetworkImage('https://via.placeholder.com/300x400'),
           fit: BoxFit.cover,
