@@ -23,6 +23,6 @@ class MoviesProvider extends ChangeNotifier {
 
     final Map<String, dynamic> decodedData = json.decode(response.body);
 
-    print(decodedData['dates']);
+    print(decodedData['results']);
   }
 }
